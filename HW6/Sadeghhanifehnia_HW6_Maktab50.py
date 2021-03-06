@@ -12,15 +12,18 @@ def calculate_total_price(product_id, count):
 
 def calculate_commission(product_id, count, user_id):
     total = calculate_total_price(product_id, count)
-    commissions = [0]
+    commissions = []
     commission_groups = p_commission(product_id)
     commissions_user = [(userid, d_cost(group), d_unit(group)) for group in commission_groups for userid in
                         d_users(group) if userid == user_id]
-    for commission in commissions_user:
-        if commission[2] == 'percent':
-            commissions.append(total - (total * commission[1] / 100))
-        if commission[2] == 'Dollar':
-            commissions.append(total - (count * commission[1]))
+    if len(commissions_user) == 0:
+        return total
+    else:
+        for commission in commissions_user:
+            if commission[2] == 'percent':
+                commissions.append(total - (total * commission[1] / 100))
+            if commission[2] == 'Dollar':
+                commissions.append(total - (count * commission[1]))
     commissions_sorted = sorted(commissions, reverse=True)
     return commissions_sorted[0]
 
@@ -41,8 +44,6 @@ def calculate_product_price(product_id, count, user_id=0):
     total_with_commission = total_price
     if user_id > 1000:
         total_with_commission = calculate_commission(product_id, count, user_id)
-        if total_with_commission == 0:
-            total_with_commission = total_price
     discount = total_price - total_with_commission
     user_name = u_names(user_id)
 
