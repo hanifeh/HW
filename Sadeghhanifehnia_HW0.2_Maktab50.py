@@ -1,5 +1,0 @@
-balance = float(input("meghdare valie ra vared konid : "))
-rate = float(input("darsad ra vared konid : "))
-interest_per_time = int(input("tedade bahre dar dore ra moshakhas konid : "))
-time = int(input("tedade dorehara moshakhas konid : "))
-print(balance*((1+(rate/interest_per_time))**(interest_per_time*time)))

@@ -1,6 +1,0 @@
-myfile = open('test_file.txt', 'r+')
-mystr = myfile.read()
-myfile.close()
-print("tedad line barabar ast ba : ", len(mystr.split("\n")))
-print("tedad word barabar ast ba : ", sum([len(line.strip().split(" ")) for line in mystr.split("\n")]))
-print("tedad char barabar ast ba : ", sum([len(word) for line in mystr.split("\n") for word in line.strip().split(" ")]))
