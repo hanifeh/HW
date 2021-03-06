@@ -1,33 +1,32 @@
-
 product_list = [
-       {
-           "type": "1",
-           "name": "shirt",
-           "price": 30,
-           "unit": "Dollar",
-           "commission_groups": ["A", "B"]
-       },
-       {
-           "type": "2",
-           "name": "pants",
-           "price": 50,
-           "unit": "Dollar",
-           "commission_groups": ["A", "C"]
-       },
-       {
-           "type": "3",
-           "name": "shoes",
-           "price": 80,
-           "unit": "Dollar",
-           "commission_groups": ["B"]
-       },
-       {
-           "type": "4",
-           "name": "hat",
-           "price": 20,
-           "unit": "Dollar",
-           "commission_groups": []
-       }
+    {
+        "type": "1",
+        "name": "shirt",
+        "price": 30,
+        "unit": "Dollar",
+        "commission_groups": ["A", "B"]
+    },
+    {
+        "type": "2",
+        "name": "pants",
+        "price": 50,
+        "unit": "Dollar",
+        "commission_groups": ["A", "C"]
+    },
+    {
+        "type": "3",
+        "name": "shoes",
+        "price": 80,
+        "unit": "Dollar",
+        "commission_groups": ["B"]
+    },
+    {
+        "type": "4",
+        "name": "hat",
+        "price": 20,
+        "unit": "Dollar",
+        "commission_groups": []
+    }
 ]
 
 markup_list = [

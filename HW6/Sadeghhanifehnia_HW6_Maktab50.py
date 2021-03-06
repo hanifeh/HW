@@ -40,11 +40,11 @@ def calculate_markup_percent(product_id, count):
 
 def calculate_product_price(product_id, count, user_id=0):
     product_name = p_name(product_id)
-    total_price = calculate_total_price(product_id, count)
+    total_price = round(calculate_total_price(product_id, count), 2)
     total_with_commission = total_price
     if user_id > 1000:
-        total_with_commission = calculate_commission(product_id, count, user_id)
-    discount = total_price - total_with_commission
+        total_with_commission = round(calculate_commission(product_id, count, user_id), 2)
+    discount = round(total_price - total_with_commission, 2)
     user_name = u_names(user_id)
 
     result = {'product_name': product_name, 'total_price': total_price, 'total_with_commission': total_with_commission,
@@ -55,7 +55,7 @@ def calculate_product_price(product_id, count, user_id=0):
 print(calculate_markup_percent("1", 5))
 print(calculate_markup_percent("2", 1))
 print(calculate_markup_percent("3", 20))
-print(calculate_product_price("1", 10, 1002))
-print(calculate_product_price("1", 15, 1003))
-print(calculate_product_price("4", 20, 1005))
+print(calculate_product_price("1", 8, 1002))
+print(calculate_product_price("1", 7, 1003))
+print(calculate_product_price("4", 3, 1005))
 print(calculate_product_price("2", 1))
