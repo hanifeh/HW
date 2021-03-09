@@ -22,7 +22,7 @@ def calculate_commission(product_id, count, user_id):
         for commission in commissions_data:
             if commission[1] == 'percent':
                 commissions.append(total * commission[0] / 100)
-            if commission[1] == 'Dollar':
+            elif commission[1] == 'Dollar':
                 commissions.append(commission[0])
     commissions_sorted = sorted(commissions, reverse=True)
     return commissions_sorted[0]
