@@ -63,7 +63,8 @@ class Company:
         for user in self.users:
             if user.get_id() == user_id:
                 first_name, last_name = user.get_username()
-                user_name = {'first_name': first_name, 'last_name': last_name}
+                user_name['first_name'] = first_name
+                user_name['last_name'] = last_name
         return user_name
 
     def calculate_product_price(self, product_id, count, user_id=0):
