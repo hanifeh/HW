@@ -52,13 +52,13 @@ class Company:
                 discount = product.get_discount(count, user_id)
                 return discount
 
-    def calculate_name(self, product_id):
+    def get_product_name(self, product_id):
         for product in self.products:
             if product.get_type() == product_id:
                 name = product.get_name()
                 return name
 
-    def user_name(self, user_id):
+    def get_user_name(self, user_id):
         user_name = {'first_name': '', 'last_name': ''}
         for user in self.users:
             if user.get_id() == user_id:
@@ -68,11 +68,11 @@ class Company:
         return user_name
 
     def calculate_product_price(self, product_id, count, user_id=0):
-        product_name = self.calculate_name(product_id)
+        product_name = self.get_product_name(product_id)
         total_price = self.calculate_total_price(product_id, count)
         discount = self.calculate_discount(product_id, count, user_id)
         total_with_commission = round(total_price - discount, 2)
-        user_name = self.user_name(user_id)
+        user_name = self.get_user_name(user_id)
         result = {
             'product_name': product_name,
             'total_price': total_price,
