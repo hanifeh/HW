@@ -38,3 +38,5 @@ for i in scores:
         else:
             dict3[n['first_name'] + ' ' + n['last_name']] = {i: n['score']}
 print(dict3)
+for item in scores:
+    print(item)

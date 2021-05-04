@@ -33,7 +33,7 @@ def calculate_markup_percent(product_id, count):
     if count > lower_count:
         markup = lower_cost
     else:
-        markup = round(upper_cost - ((count - 1) * ((upper_cost - lower_cost) / (lower_count - 1))), 3)
+        markup = round(upper_cost + ((count - 1) * ((upper_cost - lower_cost) / (1 - lower_count))), 3)
     return markup
 
 

@@ -23,8 +23,8 @@ class Product:
         if count > self.lower_count:
             markup = self.lower_cost
         else:
-            markup = round(self.upper_cost - ((count - 1) *
-                                              ((self.upper_cost - self.lower_cost) / (self.lower_count - 1))), 3)
+            markup = round(self.upper_cost + ((count - 1) *
+                                              ((self.upper_cost - self.lower_cost) / (1 - self.lower_count))), 3)
         return markup
 
     def get_price(self, count):
@@ -40,16 +40,12 @@ class Product:
     def get_discount(self, count, user_id):
         total_price = self.get_price(count)
         discounts = [0]
-        commissions_data = []
         for commission in self.commissions:
             for user in commission.get_users():
                 if user.get_id() == user_id:
-                    commissions_data.append(commission)
-
-        for commission in commissions_data:
-            if commission.unit == 'percent':
-                discounts.append(total_price * commission.cost / 100)
-            elif commission.unit == 'Dollar':
-                discounts.append(commission.cost)
+                    if commission.unit == 'percent':
+                        discounts.append(total_price * commission.cost / 100)
+                    elif commission.unit == 'Dollar':
+                        discounts.append(commission.cost)
         discount = round(sorted(discounts, reverse=True)[0], 2)
         return discount
