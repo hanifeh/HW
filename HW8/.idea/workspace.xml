@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c229731-3efa-47be-8ac2-6a25118b27d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selecao/templates/selecao/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/selecao/templates/selecao/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selecao/templates/selecao/post/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/selecao/templates/selecao/post/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selecao/templates/selecao/post/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/selecao/templates/selecao/post/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +65,11 @@
       <updated>1620139508609</updated>
       <workItem from="1620139509802" duration="213000" />
       <workItem from="1620555296052" duration="944000" />
+      <workItem from="1620656929141" duration="37000" />
+      <workItem from="1620656980365" duration="1695000" />
+      <workItem from="1620742422975" duration="16000" />
+      <workItem from="1621096041253" duration="1071000" />
+      <workItem from="1621097780289" duration="46000" />
     </task>
     <servers />
   </component>

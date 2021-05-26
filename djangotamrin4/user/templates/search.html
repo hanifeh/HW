@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    <input  placeholder="Search" name="searched" id="searched">
+</form>
+<button class="btn btn-info">Search</button>
+<div id="div1">
+
+</div>
+<div id="div2">
+
+</div>
+<div id="div3">
+
+</div>
+<div id="div4">
+
+</div>
+{% for user in results %}
+    <h1>wow</h1>
+{% endfor %}
+{{ results }}
+{% if obj %}
+    <h2>
+        first name = {{ obj.first_name }}<br> last name = {{ obj.last_name }} <br> phone number
+        = {{ obj.phone_number }}
+    </h2>
+{% endif %}
+<script>
+    $(document).ready(function () {
+        $("button").click(function (event) {
+            $('#div1').html('');
+            $('#div2').html('');
+            $('#div3').html('');
+            $('#div4').html('');
+            var num = $('#searched')
+            $.ajax({
+                method: 'POST',
+                url: "/search/",
+                data: num,
+                success: function (request) {
+                    $(request.results).each(function (index, obj) {
+                        $('#div1').append('<tr><td>first name : '+obj.first_name+'</tr></td>')
+                        $('#div1').append('<tr><td>last name : '+obj.last_name+'</tr></td>')
+                        $('#div1').append('<tr><td>phone number : '+obj.phone_number+'</tr></td>')
+                        $('#div1').append('__________________')
+                        
+                    });
+                    if (request.result) {
+                        $('#div1').append('<tr><td>'+request.result+'</tr></td>')
+                    }
+
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
