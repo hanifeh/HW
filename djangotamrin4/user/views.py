@@ -7,15 +7,18 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
+@csrf_exempt
 def create_user(request):
     form_instance = forms.UserForm()
 
     if request.method == 'POST':
         form_instance = forms.UserForm(data=request.POST)
+        print(form_instance)
         if form_instance.is_valid():
             form_instance.save()
             return JsonResponse({'status': 'ok'})
-
+        else:
+            return JsonResponse({'status': 'error'})
     return render(request, 'create_user.html', {'form': form_instance})
 
 

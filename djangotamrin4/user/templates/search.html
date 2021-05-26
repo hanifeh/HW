@@ -13,35 +13,11 @@
     <input  placeholder="Search" name="searched" id="searched">
 </form>
 <button class="btn btn-info">Search</button>
-<div id="div1">
-
-</div>
-<div id="div2">
-
-</div>
-<div id="div3">
-
-</div>
-<div id="div4">
-
-</div>
-{% for user in results %}
-    <h1>wow</h1>
-{% endfor %}
-{{ results }}
-{% if obj %}
-    <h2>
-        first name = {{ obj.first_name }}<br> last name = {{ obj.last_name }} <br> phone number
-        = {{ obj.phone_number }}
-    </h2>
-{% endif %}
+<div id="div1"></div>
 <script>
     $(document).ready(function () {
         $("button").click(function (event) {
             $('#div1').html('');
-            $('#div2').html('');
-            $('#div3').html('');
-            $('#div4').html('');
             var num = $('#searched')
             $.ajax({
                 method: 'POST',
