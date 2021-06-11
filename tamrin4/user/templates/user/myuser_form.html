@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+</form>
+<button class="btn btn-info">Create</button>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $("button").click(function (event) {
+            var first_name = $('#id_first_name').val();
+            var last_name = $('#id_last_name').val();
+            var phone_number = $('#id_phone_number').val();
+            var user = $('#id_user').val();
+            $.ajax({
+                method: 'POST',
+                url: "/create/",
+                data: {
+                    first_name: first_name,
+                    last_name: last_name,
+                    phone_number: phone_number,
+                    user: user,
+                 },
+                success: function (response) {
+                    alert(response.status);
+                },
+
+            });
+        });
+    });
+</script>
+</html>

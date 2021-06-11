@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c229731-3efa-47be-8ac2-6a25118b27d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selecao/templates/selecao/post/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/selecao/templates/selecao/post/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../djangol1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,6 +68,9 @@
       <workItem from="1620742422975" duration="16000" />
       <workItem from="1621096041253" duration="1071000" />
       <workItem from="1621097780289" duration="46000" />
+      <workItem from="1622115309335" duration="28000" />
+      <workItem from="1622180283619" duration="604000" />
+      <workItem from="1622199059631" duration="38000" />
     </task>
     <servers />
   </component>
