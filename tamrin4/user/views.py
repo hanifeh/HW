@@ -28,9 +28,8 @@ class CreateUser(LoginRequiredMixin, CreateView):
         return JsonResponse({'status': "error"})
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.user = self.request.user
-        self.object.save()
+        form.instance.user = self.request.user
+        f = super().form_vali(form)
         return JsonResponse({'status': "ok"})
 
 
